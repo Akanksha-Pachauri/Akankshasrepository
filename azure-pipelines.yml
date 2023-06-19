@@ -16,14 +16,14 @@ stages:
   steps:
   - bash: echo first build function !!
 
-- job: job2
-steps:
-- bash: echo second build function !!
+  - job: job2
+  steps:
+  - bash: echo second build function !!
 
 
-- stage: dev environment
-jobs:
-- job: devjob 1
+  - stage: dev environment
+    jobs:
+    - job: devjob 1
 steps:
 - bash: echo dev environment
 
