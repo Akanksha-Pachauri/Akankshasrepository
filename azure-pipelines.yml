@@ -41,8 +41,8 @@ stages:
 
 - stage: prodenvironment
   dependsOn: 
-  -devenvironment
-  -QAenvironment
+  - devenvironment
+  - QAenvironment
   jobs:
   - job: prodenvironment
     steps:
