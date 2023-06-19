@@ -21,29 +21,17 @@ stages:
     - bash: echo second build function !!
 
 
-  - stage: dev environment
-    jobs:
-    - job: devjob 1
-      steps:
-      - bash: echo dev environment
+- stage: dev environment
+  jobs:
+  - job: devjob 1
+    steps:
+    - bash: echo dev environment
 
-    - job: devjob2
-      steps:
-      - bash: echo job2 dev environment
+  - job: devjob2
+    steps:
+    - bash: echo job2 dev environment
 
 
 - stage: QA environment
 
 - stage: prod environment
-
-
-
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
