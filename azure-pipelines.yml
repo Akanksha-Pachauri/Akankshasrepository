@@ -23,7 +23,7 @@ stages:
 
 - stage: dev environment
   jobs:
-  - job: devjob 1
+  - job: devjob1
     steps:
     - bash: echo dev environment
 
