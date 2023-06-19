@@ -40,8 +40,9 @@ stages:
     - bash : echo QA environment
 
 - stage: prodenvironment
-  dependsOn : devenvironment
-  dependsOn : QAenvironment
+  dependsOn: 
+  -devenvironment
+  -QAenvironment
   jobs:
   - job: prodenvironment
     steps:
