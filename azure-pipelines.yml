@@ -16,7 +16,7 @@ stages:
     steps:
     - bash: echo first build function !!
 
-   - job: job2
+  - job: job2
     steps:
     - bash: echo second build function !!
 
