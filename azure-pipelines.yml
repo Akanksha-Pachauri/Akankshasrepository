@@ -16,12 +16,13 @@ stages:
     steps:
     - bash: echo first build function !!
 
-  - job: job2
+   - job: job2
     steps:
     - bash: echo second build function !!
 
 
 - stage: dev environment
+dependsOn: build
   jobs:
   - job: devjob1
     steps:
@@ -31,7 +32,17 @@ stages:
     steps:
     - bash: echo job2 dev environment
 
-
 - stage: QA environment
+dependsOn: build
+  jobs:
+  - job: QAjob
+  steps : 
+  - bash : echo QA environment
 
 - stage: prod environment
+dependsOn : build
+  jobs:
+  - job: prod environment
+  steps :
+  - bash : echo prod environment
+
