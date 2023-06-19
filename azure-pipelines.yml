@@ -4,17 +4,17 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- master
 
 pool:
   vmImage: ubuntu-latest
 
 stages:
 - stage: build
-jobs:
-- job: job1
-steps:
-- bash: echo first build function !!
+  jobs:
+  - job: job1
+  steps:
+  - bash: echo first build function !!
 
 - job: job2
 steps:
