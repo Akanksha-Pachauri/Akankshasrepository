@@ -42,8 +42,8 @@ stages:
   variables:
     environment: prod
   dependsOn: 
-  - $(environment)environment
-  - $(environment)QAenvironment
+  - devdeploy
+  - QAdeploy
   jobs:
   - job: prodenvironment
     steps:
