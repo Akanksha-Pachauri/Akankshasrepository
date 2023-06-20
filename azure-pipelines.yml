@@ -35,13 +35,13 @@ variables:
     - bash: echo $(environment)job2devenvironment
 
 #- stage: QAdeploy
-variables:
-  environment: Dev
-  dependsOn: build
-  jobs:
-  - job: QAjob
-    steps: 
-    - bash : echo $(environment)QA environment
+#variables:
+  #environment: Dev
+  #dependsOn: build
+  #jobs:
+  #- job: QAjob
+    #steps: 
+    #- bash : echo $(environment)QA environment
 
 - stage: prodenvironment
 varibales:
