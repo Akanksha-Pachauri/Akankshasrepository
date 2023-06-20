@@ -30,12 +30,11 @@ variables:
   - job: devjob1
     steps:
     - bash: echo dev environment
-
   - job: devjob2
     steps:
     - bash: echo $(environment)job2devenvironment
 
-- stage: QAenvironment
+- stage: QAdeploy
 variables:
   environment: Dev
   dependsOn: build
