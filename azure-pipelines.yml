@@ -34,8 +34,8 @@ variables:
     steps:
     - bash: echo $(environment)job2devenvironment
 
-- stage: QAdeploy
- variables:
+#- stage: QAdeploy
+variables:
   environment: Dev
   dependsOn: build
   jobs:
@@ -44,7 +44,7 @@ variables:
     - bash : echo $(environment)QA environment
 
 - stage: prodenvironment
- varibales:
+varibales:
   environment: Dev
   dependsOn: 
   - devenvironment
