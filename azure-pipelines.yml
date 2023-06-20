@@ -34,23 +34,23 @@ variables:
     steps:
     - bash: echo $(environment)job2devenvironment
 
- - stage: QAdeploy
- variables:
-  environment: Dev
-  dependsOn: build
-  jobs:
-  - job: QAjob
-    steps: 
-    - bash : echo $(environment)QA environment
+#- stage: QAdeploy
+# variables:
+ # environment: Dev
+#  dependsOn: build
+ # jobs:
+#  - job: QAjob
+  #  steps: 
+  #  - bash : echo $(environment)QA environment
 
-- stage: prodenvironment
- varibales:
-  environment: Dev
-  dependsOn: 
-  - devenvironment
-  - QAenvironment
-  jobs:
-  - job: prodenvironment
-    steps:
-    - bash : echo $(environment)prod environment
+#- stage: prodenvironment
+ #varibales:
+ # environment: Dev
+ # dependsOn: 
+ # - devenvironment
+ # - QAenvironment
+ # jobs:
+ # - job: prodenvironment
+ #   steps:
+ #   - bash : echo $(environment)prod environment
 
