@@ -33,7 +33,6 @@ variables:
   - job: devjob2
     steps:
     - bash: echo $(environment)job2devenvironment
-
 - stage: QAdeploy
 variables:
   environment: Dev
