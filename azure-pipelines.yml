@@ -16,11 +16,18 @@ stages:
     steps:
     - bash: echo first build function !!
     - bash: echo $(pipelinelevelvariable)
-  - job: job2
-    steps:
-    - bash: echo second build function !!
-- stage: devdeploy
-  variables:
+    - bash: echo $(build.buildNumber)
+    - bash: echo $(build.buildID)
+    - bash: echo $(build.SourceBranchName)
+    - bash: echo $(build.SourcesDirectory)
+    - bash: echo $(System.DefaultWorkingDirectory)
+    - bash: ls -R $(System.DefaultWorkingDirectory)
+    - bash: echo $(build.ArtifactStagingDirectory)
+ # - job: job2
+ #   steps:
+ #   - bash: echo second build function !!
+#- stage: devdeploy
+ # variables:
     environment: Dev
   dependsOn: build
   jobs:
@@ -30,22 +37,22 @@ stages:
   - job: devjob2
     steps:
     - bash: echo job2$(environment)environment
-- stage: QAdeploy
-  variables:
-    environment: Dev
-  dependsOn: build
-  jobs:
-  - job: QAjob
-    steps: 
-    - bash : echo $(environment)QAenvironment
-- stage: prodenvironment
-  variables:
-    environment: prod
-  dependsOn: 
-  - devdeploy
-  - QAdeploy
-  jobs:
-  - job: prodenvironment
-    steps:
-    - bash : echo $(environment)environment
+#- stage: QAdeploy
+ # variables:
+ #   environment: Dev
+#  dependsOn: build
+#  jobs:
+ # - job: QAjob
+  #  steps: 
+ #   - bash : echo $(environment)QAenvironment
+#- stage: prodenvironment
+ # variables:
+ #   environment: prod
+#  dependsOn: 
+ # - devdeploy
+#  - QAdeploy
+#  jobs:
+#  - job: prodenvironment
+#    steps:
+#    - bash : echo $(environment)environment
 
