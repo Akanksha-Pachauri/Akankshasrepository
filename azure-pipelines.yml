@@ -40,12 +40,12 @@ stages:
     - bash : echo $(environment)QAenvironment
 - stage: prodenvironment
   variables:
-    environment: Dev
+    environment: prod
   dependsOn: 
   - devenvironment
   - QAenvironment
   jobs:
   - job: prodenvironment
     steps:
-    - bash : echo $(environment)prodenvironment
+    - bash : echo $(environment)environment
 
