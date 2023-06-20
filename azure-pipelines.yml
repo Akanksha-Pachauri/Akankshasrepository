@@ -15,7 +15,7 @@ stages:
   - job: job1
     steps:
     - bash: echo first build function !!
-    - bash: echo $(pipelinelevelvariable)
+    #- bash: echo $(pipelinelevelvariable)
 
   - job: job2
     steps:
@@ -23,8 +23,8 @@ stages:
 
 
 - stage: devdeploy
-variables:
-  environment: Dev
+#variables
+  #environment: Dev
   dependsOn: build
   jobs:
   - job: devjob1
@@ -32,25 +32,25 @@ variables:
     - bash: echo dev environment
   - job: devjob2
     steps:
-    - bash: echo $(environment)job2devenvironment
+    - bash: echo job2devenvironment
 
-#- stage: QAdeploy
-#variables:
-  #environment: Dev
-  #dependsOn: build
-  #jobs:
-  #- job: QAjob
-    #steps: 
-    #- bash : echo $(environment)QA environment
+- stage: QAdeploy
+variables:
+  environment: Dev
+  dependsOn: build
+  jobs:
+  - job: QAjob
+    steps: 
+    - bash : echo $(environment)QA environment
 
-#- stage: prodenvironment
+- stage: prodenvironment
 #varibales:
   #environment: Dev
-  #dependsOn: 
-  #- devenvironment
-  #- QAenvironment
-  #jobs:
-  #- job: prodenvironment
-    #steps:
-    #- bash : echo $(environment)prod environment
+  dependsOn: 
+  - devenvironment
+  - QAenvironment
+  jobs:
+  - job: prodenvironment
+    steps:
+    - bash : echo prod environment
 
