@@ -37,6 +37,8 @@ variables:
 
 
 - stage: QAenvironment
+variables:
+  environment: QAdeployment
   dependsOn: build
   jobs:
   - job: QAjob
