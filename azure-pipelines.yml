@@ -29,6 +29,11 @@ stages:
     - bash: mvn -version
     - bash: ls -R $(Build.ArtifactStagingDirectory)
  
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'Akankshasartifact'
+        publishLocation: 'Container'
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
