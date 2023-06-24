@@ -22,6 +22,7 @@ stages:
     steps:
     - bash: echo "start dev deploy"
   - deployment: Devdeployjob
+    environment: Devdeployjob
     strategy:
       runOnce:
        deploy:
