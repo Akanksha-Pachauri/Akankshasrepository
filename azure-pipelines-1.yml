@@ -19,14 +19,14 @@ stages:
 - stage: devdeploy
   jobs:
   - job: buildjob
-  steps:
-  - bash: echo "start dev deploy"
-- deployment: Devdeployjob
-  strategy:
-    runOnce:
-      deploy:
+    steps:
+    - bash: echo "start dev deploy"
+  - deployment: Devdeployjob
+    strategy:
+      runOnce:
+       deploy:
         steps:
-        - step: echo deploy to dev
+        - bash: echo deploy to dev
 
 - stage: QADeploy  
   Jobs:
