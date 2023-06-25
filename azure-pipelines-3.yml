@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'akankshasdockerhub'
-        repository: 'akankshasrepository2/currency-exchange-devops'
+        repository: 'akankshasrepository/currency-exchange-devops'
         command: 'buildAndPush'
         dockerfile: '*$(build.SourcesDirectory)/Dockerfile'
         tags: '$(tag)'
