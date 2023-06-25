@@ -25,5 +25,5 @@ stages:
         containerRegistry: 'akankshasdockerhub'
         repository: 'akankshasrepository/01-currency-exchange-microservice-basic'
         command: 'buildAndPush'
-        dockerfile: 'akankshasrepository'
+        dockerfile: 'akankshasrepository/01-currency-exchnge-microservice-basic'
         tags: '$(tag)'
