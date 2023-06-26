@@ -24,6 +24,6 @@ stages:
       inputs:
         containerRegistry: 'akankshasdockerhub'
         repository: 'dsunshine/01-currency-exchange-microservice-basic'
-        command: 'login'
+        command: 'buildAndPush'
         dockerfile: '**/Dockerfile'
         tags: '$(tag)'
