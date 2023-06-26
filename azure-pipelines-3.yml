@@ -27,3 +27,4 @@ stages:
         command: 'buildAndPush'
         dockerfile: '**/Dockerfile'
         tags: '$(tag)'
+        arguments: --label buildtype=nightly
