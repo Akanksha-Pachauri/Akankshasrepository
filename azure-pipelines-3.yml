@@ -25,6 +25,5 @@ stages:
         containerRegistry: 'akankshasdockerhub'
         repository: 'dsunshine/01-currency-exchange-microservice-basic'
         command: 'buildAndPush'
-        dockerfile: '**/Dockerfile'
+        dockerfile: 'akankshasrepository/Dockerfile'
         tags: '$(tag)'
-        arguments: --label buildtype=nightly
