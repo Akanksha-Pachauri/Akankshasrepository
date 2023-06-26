@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'akankshasdockerhub'
-        repository: 'dsunshine/01-currency-exchange-microservice-basic'
+        repository: 'dsunshine/currency-exchange-devops'
         command: 'buildAndPush'
-        dockerfile: 'akankshasrepository/Dockerfile'
+        dockerfile: '**/Dockerfile'
         tags: '$(tag)'
