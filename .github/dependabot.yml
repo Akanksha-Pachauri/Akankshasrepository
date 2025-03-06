@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"  # Change this for npm, pip, etc.
+    directory: "/"  
+    schedule:
+      interval: "weekly"  # Runs every week
+    open-pull-requests-limit: 5
+    reviewers:
+      - "your-github-username"
+    labels:
+      - "dependencies"
